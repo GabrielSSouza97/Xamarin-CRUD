@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRUD.Views.EnterpriseDetails"
+             Title="Enterprise Details">
+    <!-- Layout children vertically -->
+    <StackLayout Margin="20">
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Nome: " />
+                    <Span Text="{Binding Name}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="CNPJ: " />
+                    <Span Text="{Binding CNPJ}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Endereço: " />
+                    <Span Text="{Binding Address}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Funcionário: " />
+                    <Span Text="{Binding Employee}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <!-- Layout children in two columns -->
+        <Grid ColumnDefinitions="*,*">
+            <Button Text="Edit"
+                    Clicked="OnEditButtonClicked" />
+            <Button Grid.Column="1"
+                    Text="Delete"
+                    Clicked="OnDeleteButtonClicked"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRUD.Views.EmployeeDetails"
+             Title="Employee Details">
+    <!-- Layout children vertically -->
+    <StackLayout Margin="20">
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Nome: " />
+                    <Span Text="{Binding Name}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="CPF: " />
+                    <Span Text="{Binding CPF}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Email: " />
+                    <Span Text="{Binding Email}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Endereço: " />
+                    <Span Text="{Binding Address}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="Empresa: " />
+                    <Span Text="{Binding Enterprise}" />
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <!-- Layout children in two columns -->
+        <Grid ColumnDefinitions="*,*">
+            <Button Text="Edit"
+                    Clicked="OnEditButtonClicked" />
+            <Button Grid.Column="1"
+                    Text="Delete"
+                    Clicked="OnDeleteButtonClicked"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>

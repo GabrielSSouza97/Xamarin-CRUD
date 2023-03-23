@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CRUD.Views.EmployeeEntry"
+             Title="Employee Entry">
+    <!-- Layout children vertically -->
+    <StackLayout x:Name="EmployeeEntryStack"
+                 Margin="20">
+        <StackLayout x:Name="InformationsStack">
+            <Label Text="Nome:" />
+            <Entry x:Name="nameEntry"
+               Placeholder="Enter name"
+               Text="{Binding Name}"
+               TextChanged="OnNameEntryChanged"
+               MaxLength="50"/>
+            <Label x:Name="nameHint" 
+               Text=""
+               FontSize="Micro"
+               HeightRequest="0"/>
+            <Label Text="CPF:" />
+            <Entry x:Name="cpfEntry"
+               Placeholder="Enter CPF"
+               Text="{Binding CPF}"
+               TextChanged="OnCPFEntryTextChanged"
+               MaxLength="11"/>
+            <Label x:Name="cpfHint"
+               Text=""
+               FontSize="Micro"
+               HeightRequest="0"/>
+            <Label Text="E-mail:" />
+            <Entry x:Name="emailEntry"
+               Placeholder="Enter email"
+               Text="{Binding Email}"
+               TextChanged="OnEmailEntryChanged"/>
+            <Label x:Name="emailHint" 
+               Text=""
+               FontSize="Micro"
+               HeightRequest="0"/>
+            <Label Text="Endereço:" />
+            <Entry x:Name="addressEntry"
+               Placeholder="Enter address"
+               Text="{Binding Address}" />
+            <Label Text="Empresa:" />
+            <Entry x:Name="enterpriseEntry"
+               Placeholder="Enter enterprise"
+               Text="{Binding Enterprise}" />
+        </StackLayout>
+        <Button x:Name="newEnterpriseButton"
+                Text="New Enterprise"
+                Clicked="OnNewEnterpriseButtonClicked"/>
+        <!-- Layout children in two columns -->
+        <Grid ColumnDefinitions="*,*">
+            <Button x:Name="saveButton"
+                    Text="Save"
+                    IsEnabled="False"
+                    Clicked="OnSaveButtonClicked" />
+            <Button Grid.Column="1"
+                    Text="Cancel"
+                    Clicked="OnCancelButtonClicked"/>
+        </Grid>
+    </StackLayout>
+</ContentPage>
